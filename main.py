@@ -1,7 +1,8 @@
 import datetime
 from kivy.lang import Builder
 from kivy.app import App
-
+from android.permissions import request_permissions, Permission
+request_permissions([Permission.CAMERA,Permission.WRITE_EXTERNAL_STORAGE,Permission.READ_EXTERNAL_STORAGE])
 kv = """
 #:import XCamera kivy.garden.xcamera.XCamera
 
