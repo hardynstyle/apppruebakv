@@ -4,7 +4,7 @@ Created on Fri Apr 29 08:29:57 2022
 
 @author: hardyn
 """
-import cv2
+
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivy.uix.videoplayer import VideoPlayer
@@ -385,11 +385,7 @@ class Hardyn(MDApp):
     def callback(self, instance):
         print(instance.icon)  
         if instance.icon=="camera-plus":
-            self.capture = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-            # Establezca la resolución de la cámara, 3 es alta, 4 es ancha       
-            self.my_camera = KivyCamera(capture=self.capture, fps=30)
-            self.root.ids.reproductor.add_widget(self.my_camera)
-            # codigo_principal.programa_de_deteccion_de_rostros(self)
+            pass
             
         elif instance.icon=="music-note-plus":
             pass
@@ -563,32 +559,9 @@ class Hardyn(MDApp):
         
 class codigo_principal():
     def programa_de_deteccion_de_rostros(self):
+        pass
         
     
-    
-        cap = cv2.VideoCapture(0)
-         
-        while (cap.isOpened ()): # Juzgue si la cámara se abre correctamente, si tiene éxito, tome la foto
-            ret, image = cap.read () #Agarra un marco de imagen
-            # Lea la imagen y conviértala a valor de color RGB	
-            # image = Image.open(filename).convert('RGBA')	
-            if ret==False:
-                break
-            # image=cv2.cvtColor(image,cv2.COLOR_RGB2HSV_FULL)
-            cv2.imshow("TRANSFORMATE",image)
-            # except:
-            #     image=copia
-            #     cv2.imshow("TRANSFOR",image)
-            # print(image)
-            # image = cv2.merge('RGBA', (r, g, b, a))
-        
-            if cv2.waitKey(1) == 27: 
-                break 
-            
-            
-            
-        cap.release () # Libera el objeto
-        cv2.destroyAllWindows()      
         
         
 Hardyn().run()
