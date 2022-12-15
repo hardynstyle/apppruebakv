@@ -39,7 +39,7 @@ version = 0.1
 #requirements = python3,kivy==2.0.0,kivymd,pillow,requests,certifi,urllib3,chardet,idna,plyer,kivy_garden.mapview, pytz
 #requisitos  =  kivy==2.0.0, kivymd==0.104.2, sdl2_ttf == 2.0.15,sdl2_ttf==2.0.15,pillow
 #requisitos  =  DateTime,keyboard,mediapipe,numpy,opencv,errno,imutils,os-sys
-requirements  = python3, kivy==2.0.0, https://github.com/kivymd/KivyMD/archive/master.zip,pillow,sdl2_ttf==2.0.15,numpy,os-sys
+requirements  = python3, kivy==2.0.0, https://github.com/kivymd/KivyMD/archive/master.zip,pillow,sdl2_ttf==2.0.15,os-sys
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
