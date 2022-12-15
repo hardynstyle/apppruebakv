@@ -37,25 +37,9 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,android,certifi==2022.12.7,
-charset-normalizer==2.1.1,
-docutils==0.19,
-idna==3.4,
-Kivy==2.0.0,
-kivy-deps.angle==0.3.3,
-kivy-deps.glew==0.3.1,
-kivy-deps.sdl2==0.3.1,
-Kivy-Garden==0.1.4,
-kivy-garden.xcamera==2020.613,
-kivymd==1.1.1,
-numpy==1.23.5,
-opencv-python==4.6.0.66,
-Pillow==9.3.0,
-Pygments==2.13.0,
-pypiwin32==223,
-pywin32==305,
-requests==2.28.1,
-urllib3==1.26.13,
+#requirements = python3,android,certifi==2022.12.7,
+requirements  = python3, kivy==2.0.0, https://github.com/kivymd/KivyMD/archive/master.zip,pillow,sdl2_ttf==2.0.15,setuptools,libiconv,libzbar,pyzbar,pyjnius,android,os-sys
+
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -68,7 +52,7 @@ presplash.filename = %(source.dir)s/images/presplash.png
 icon.filename = %(source.dir)s/images/favicon.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
-orientation = portrait
+orientation = all
 
 # (list) List of service to declare
 #services = NAME:ENTRYPOINT_TO_PY,NAME2:ENTRYPOINT2_TO_PY
@@ -111,7 +95,7 @@ android.presplash_color = black
 #icon.adaptive_background.filename = %(source.dir)s/data/icon_bg.png
 
 # (list) Permissions
-android.permissions = CAMERA, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
+android.permissions = CAMERA, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE,SEND_SMS
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
