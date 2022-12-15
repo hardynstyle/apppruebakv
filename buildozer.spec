@@ -38,7 +38,7 @@ version = 0.1
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
 #requirements = python3,android,certifi==2022.12.7,
-requirements  = python3, kivy==2.0.0, https://github.com/kivymd/KivyMD/archive/master.zip,pillow,sdl2_ttf==2.0.15,setuptools,libiconv,libzbar,pyzbar,pyjnius,android,os-sys
+requirements  = python3,opencv, kivy==2.0.0, https://github.com/kivymd/KivyMD/archive/master.zip,pillow,sdl2_ttf==2.0.15,setuptools,libiconv,libzbar,pyzbar,pyjnius,android,os-sys
 
 
 # (str) Custom source folders for requirements
