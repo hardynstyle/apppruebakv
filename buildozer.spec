@@ -7,7 +7,7 @@ title = hardyn
 package.name = HR
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.HR
+package.domain = org.test
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -39,7 +39,7 @@ version = 0.1
 #requirements = python3,kivy==2.0.0,kivymd,pillow,requests,certifi,urllib3,chardet,idna,plyer,kivy_garden.mapview, pytz
 #requisitos  =  kivy==2.0.0, kivymd==0.104.2, sdl2_ttf == 2.0.15,sdl2_ttf==2.0.15,pillow
 #requisitos  =  DateTime,keyboard,mediapipe,numpy,opencv,errno,imutils,os-sys
-requirements  = python3, kivy==2.0.0, https://github.com/kivymd/KivyMD/archive/master.zip,pillow,sdl2_ttf==2.0.15,os-sys
+requirements  = kivy==2.0.0, https://github.com/kivymd/KivyMD/archive/master.zip,pillow,sdl2_ttf==2.0.15,plyer
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -88,16 +88,16 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-#android.permissions = INTERNET
+android.permissions = INTERNET,CAMERA
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 29
+android.api = 29
 
 # (int) Minimum API your APK will support.
-#android.minapi = 21
+android.minapi = 21
 
 # (int) Android SDK version to use
-#android.sdk = 20
+android.sdk = 20
 
 # (str) Android NDK version to use
 #android.ndk = 19b
@@ -106,7 +106,7 @@ fullscreen = 0
 #android.ndk_api = 21
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
-#android.private_storage = True
+android.private_storage = True
 
 # (str) Android NDK directory (if empty, it will be automatically downloaded.)
 #android.ndk_path =
