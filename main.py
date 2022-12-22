@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Thu Dec 22 15:46:07 2022
+
+@author: hardyn
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Fri Apr 29 08:29:57 2022
 
 @author: hardyn
@@ -300,42 +307,11 @@ class KivyCamera(Image):
     def __init__(self, capture, fps, **kwargs):
         super(KivyCamera, self).__init__(**kwargs)
         
-        # capture.set(3,960) # alto
-        # capture.set(4,360)  #   ancho 
-        capture.set(cv2.CAP_PROP_FRAME_WIDTH, 720)
-        capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 1280)        
-        self.capture = capture
-        Clock.schedule_interval(self.update, 1.0 / fps)
+
 
     def update(self, dt):
 
-        # camera_resolution = (640, 480)
-        ret, frame = self.capture.read()
-        if ret:
-            # aqui todo de opencv
-            img = cv2.flip(frame, 0)
-            img=cv2.cvtColor(img, cv2.COLOR_HSV2BGR_FULL)
-            radio_self=40
-            radio_interno=30
-            image=img
-            # image=codigo_principal.segmetacion_de_imagenes(image,carpeta,ruta_de_las_imagenes,lista_de_background,selfie_segmentation)
-            cv2.circle(image, (int(image.shape[1]/2),image.shape[0]-40),radio_self,(255,125,0), cv2.FILLED)
-            cv2.circle(image, (int(image.shape[1]/2),image.shape[0]-40),radio_interno,(255,255,255), cv2.FILLED)
-            # if image.shape[1]/2-radio_self<xm<image.shape[1]/2+radio_self and image.shape[0]-radio_self-40<ym<image.shape[0]+radio_self-40:
-            #     contabilizador=contabilizador+1
-            #     cv2.circle(image, (int(image.shape[1]/2),image.shape[0]-40),radio_interno,(0,0,0), cv2.FILLED)
-            #     cv2.imwrite(carpet+'/'+'captura_{}.jpg'.format(contabilizador), image) 
-            #     print("se capturo la pantalla y se guardo")
-            #     xm=-1;ym=-1            
-            
-            # fin de codigo opencv
-            img_chain= img.tostring()
-            # cv2.imshow('filtro_activado',img) 
-            image_texture = Texture.create(size=(frame.shape[1], frame.shape[0]), colorfmt='bgr')
-                
-            image_texture.blit_buffer(img_chain, colorfmt='bgr', bufferfmt='ubyte')
-            # # display image from the texture
-            self.texture = image_texture
+        pass
             
             
             
