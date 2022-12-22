@@ -1,19 +1,19 @@
 [app]
 
 # (str) Title of your application
-title = XCamera
+title = hardyn
 
 # (str) Package name
-package.name = xcamera
+package.name = HR
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = com.github.kivy
+package.domain = org.HR
 
 # (str) Source code where the main.py live
-source.dir = src
+source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,ttf,wav
+source.include_exts = py,png,jpg,kv,atlas
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -28,18 +28,15 @@ source.include_exts = py,png,jpg,kv,atlas,ttf,wav
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-# version = 0.1
+version = 0.1
 
 # (str) Application versioning (method 2)
-version.regex = __version__ = ['"](.*)['"]
-version.filename = %(source.dir)s/kivy_garden/xcamera/version.py
+# version.regex = __version__ = ['"](.*)['"]
+# version.filename = %(source.dir)s/main.py
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements =
-    android,
-    kivy==00034a5,
-    python3, https://github.com/kivymd/KivyMD/archive/master.zip,pillow,sdl2_ttf==2.0.15,plyer
+requirements  = python3, kivy==2.0.0, https://github.com/kivymd/KivyMD/archive/master.zip,pillow,sdl2_ttf==2.0.15,numpy,os-sys
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -88,22 +85,22 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-android.permissions = CAMERA
+#android.permissions = INTERNET
 
 # (int) Target Android API, should be as high as possible.
-android.api = 27
+#android.api = 29
 
 # (int) Minimum API your APK will support.
-android.minapi = 21
+#android.minapi = 21
 
 # (int) Android SDK version to use
-android.sdk = 20
+#android.sdk = 20
 
 # (str) Android NDK version to use
-android.ndk = 19b
+#android.ndk = 19b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
-android.ndk_api = 21
+#android.ndk_api = 21
 
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
@@ -126,10 +123,13 @@ android.ndk_api = 21
 # agreements. This is intended for automation only. If set to False,
 # the default, you will be shown the license when first running
 # buildozer.
-android.accept_sdk_license = True
+# android.accept_sdk_license = False
 
 # (str) Android entry point, default is ok for Kivy-based app
 #android.entrypoint = org.renpy.android.PythonActivity
+
+# (str) Android app theme, default is ok for Kivy-based app
+# android.apptheme = "@android:style/Theme.NoTitleBar"
 
 # (list) Pattern to whitelist for the whole project
 #android.whitelist =
@@ -158,8 +158,25 @@ android.accept_sdk_license = True
 # bootstrap)
 #android.gradle_dependencies =
 
+# (list) add java compile options
+# this can for example be necessary when importing certain java libraries using the 'android.gradle_dependencies' option
+# see https://developer.android.com/studio/write/java8-support for further information
+# android.add_compile_options = "sourceCompatibility = 1.8", "targetCompatibility = 1.8"
+
+# (list) Gradle repositories to add {can be necessary for some android.gradle_dependencies}
+# please enclose in double quotes 
+# e.g. android.gradle_repositories = "maven { url 'https://kotlin.bintray.com/ktor' }"
+#android.add_gradle_repositories =
+
+# (list) packaging options to add 
+# see https://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.PackagingOptions.html
+# can be necessary to solve conflicts in gradle_dependencies
+# please enclose in double quotes 
+# e.g. android.add_packaging_options = "exclude 'META-INF/common.kotlin_module'", "exclude 'META-INF/*.kotlin_module'"
+#android.add_gradle_repositories =
+
 # (list) Java classes to add as activities to the manifest.
-#android.add_activites = com.example.ExampleActivity
+#android.add_activities = com.example.ExampleActivity
 
 # (str) OUYA Console category. Should be one of GAME or APP
 # If you leave this blank, OUYA support will not be enabled
@@ -204,6 +221,10 @@ android.accept_sdk_license = True
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
 android.arch = armeabi-v7a
 
+# (int) overrides automatic versionCode computation (used in build.gradle)
+# this is not the same as app version and should only be edited if you know what you're doing
+# android.numeric_version = 1
+
 #
 # Python for android (p4a) specific
 #
@@ -212,7 +233,7 @@ android.arch = armeabi-v7a
 #p4a.fork = kivy
 
 # (str) python-for-android branch to use, defaults to master
-p4a.branch = develop
+#p4a.branch = master
 
 # (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
 #p4a.source_dir =
